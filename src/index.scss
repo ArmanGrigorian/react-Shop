@@ -1,0 +1,44 @@
+:root {
+    // sizes
+    --my-size-min: 2px;
+    --my-size-mid: 10px;
+
+    // fonts
+    --my-font-family: 'Montserrat', sans-serif;
+
+    // colors
+    --my-color-black: rgb(10, 10, 10);
+    --my-color-white: rgb(255, 255, 255);
+    --my-color-red: rgb(244, 67, 54);
+    --my-color-greyDark: rgb(110, 110, 110);
+    --my-color-greyMid: rgb(220, 220, 220);
+    --my-color-greyLight: rgb(250, 250, 250);
+    --my-color-facebook: rgb(24, 119, 242);
+    --my-color-instagram: rgb(140, 66, 150);
+    --my-color-pinterest: rgb(223, 0, 34);
+    --my-color-twitter: rgb(28, 150, 232);
+    --my-color-linnkedIn: rgb(12, 97, 191);
+}
+
+;
+
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: var(--my-font-family);
+}
+
+;
+
+main {
+    width: min(100%, 1220px);
+    margin: 0 auto;
+    padding: 0px 10px;
+    display: grid;
+    grid-template-columns: 160px auto;
+
+}
+
+;

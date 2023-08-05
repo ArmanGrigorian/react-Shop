@@ -1,0 +1,29 @@
+@use "../../modules/mixins" as mxs;
+
+header {
+    @include mxs.rowFlex(space-between, center);
+    min-height: 80px;
+    background-color: var(--my-color-greyLight);
+
+    h3 {
+        color: var(--my-color-greyDark);
+        font-weight: 400;
+        font-size: clamp(20px, 3vw, 24px);
+        text-align: center;
+        cursor: default;
+    }
+
+    svg {
+        margin-right: calc(var(--my-size-mid) * 3);
+        scale: 1.2;
+        cursor: pointer;
+
+        &:hover {
+            color: var(--my-color-greyDark);
+        }
+
+        &:active {
+            transform: scale(0.9);
+        }
+    }
+}

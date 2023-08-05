@@ -1,0 +1,52 @@
+@use "../../modules/mixins" as mxs;
+
+.subscribeForm {
+    padding: calc(var(--my-size-mid) * 5) calc(var(--my-size-mid) * 2) calc(var(--my-size-mid) * 4);
+    background-color: var(--my-color-black);
+    color: var(--my-color-white);
+
+    fieldset {
+        @include mxs.colFlex(center, start, 12px);
+        border: none;
+
+        legend {
+            color: var(--my-color-white);
+            font-size: clamp(30px, 2.5vw, 36px);
+            padding-bottom: var(--my-size-mid);
+        }
+
+        p {
+            font-size: clamp(13px, 1vw, 15px);
+        }
+
+        input {
+            border-radius: calc(var(--my-size-min) * 2);
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: calc(var(--my-size-min) * 4) calc(var(--my-size-min) * 8);
+            border: none;
+
+            &:focus {
+                outline: 1px solid var(--my-color-red);
+                outline-offset: -2px;
+                caret-color: var(--my-color-red);
+            }
+        }
+
+        input[type="submit"] {
+            width: fit-content;
+            background-color: var(--my-color-red);
+            color: var(--my-color-white);
+            padding: calc(var(--my-size-min) * 4) calc(var(--my-size-min) * 8);
+            border: none;
+            transition: color 200ms linear, background-color 200ms linear;
+
+            &:hover {
+                background-color: var(--my-color-greyMid);
+                color: var(--my-color-black);
+            }
+        }
+    }
+}

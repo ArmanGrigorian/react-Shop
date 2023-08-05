@@ -1,0 +1,154 @@
+@use "../../modules/mixins" as mxs;
+
+footer {
+    @include mxs.colFlex();
+    background-color: var(--my-color-greyLight);
+
+    .footerTop {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        place-items: start space-between;
+        padding: calc(var(--my-size-mid) * 8) calc(var(--my-size-mid) * 2);
+
+        h3 {
+            color: var(--my-color-greyDark);
+            font-weight: 400;
+            font-size: clamp(20px, 3vw, 24px);
+            text-align: center;
+            padding-bottom: calc(var(--my-size-min) * 9);
+            cursor: default;
+        }
+
+        form {
+            grid-column: 1/2;
+
+            fieldset {
+                @include mxs.colFlex(center, center, 10px);
+                border: none;
+
+                legend {
+                    @extend h3;
+                }
+
+                p {
+                    color: var(--my-color-black);
+                    cursor: default;
+                }
+
+                input {
+                    width: 100%;
+                    padding: 7px;
+                    border-radius: calc(var(--my-size-min) * 2);
+                    border: 1px solid var(--my-color-greyDark);
+
+                    &[type="submit"] {
+                        background-color: var(--my-color-black);
+                        color: var(--my-color-white);
+                        border: none;
+                        padding-block: var(--my-size-mid);
+                        transition: color 200ms linear, background-color 200ms linear;
+
+                        &:hover {
+                            background-color: var(--my-color-greyMid);
+                            color: var(--my-color-black);
+                        }
+
+                        &:active {
+                            scale: 0.9;
+                        }
+                    }
+                }
+            }
+        }
+
+        div:first-of-type {
+            grid-column: 2/3;
+
+            ul {
+                padding-bottom: 20px;
+
+                li {
+                    list-style-type: none;
+                    text-underline-offset: 2px;
+                    text-decoration-thickness: 1px;
+                    text-decoration: underline;
+                    text-align: center;
+                    padding-bottom: 7px;
+                    color: var(--my-color-greyDark);
+                    font-size: clamp(12px, 2vw, 14px);
+                    cursor: pointer;
+                }
+            }
+
+        }
+
+        div:last-of-type {
+            grid-column: 3/4;
+
+            ul {
+                padding-bottom: 20px;
+
+                li {
+                    padding-bottom: 8px;
+                    list-style-type: none;
+                    text-align: center;
+                    color: var(--my-color-greyDark);
+                    font-size: clamp(12px, 2vw, 14px);
+                    cursor: pointer;
+                }
+            }
+
+            div {
+                @include mxs.rowFlex(space-evenly, center);
+                margin: 0 auto;
+                text-align: center;
+                width: 70%;
+
+                a {
+                    svg {
+                        cursor: pointer;
+                    }
+
+                    &:nth-of-type(1) {
+                        color: var(--my-color-facebook);
+
+                    }
+
+                    &:nth-of-type(2) {
+                        color: var(--my-color-instagram);
+
+                    }
+
+                    &:nth-of-type(3) {
+                        color: var(--my-color-pinterest);
+
+                    }
+
+                    &:nth-of-type(4) {
+                        color: var(--my-color-twitter);
+
+                    }
+
+                    &:nth-of-type(5) {
+                        color: var(--my-color-linkedIn);
+
+                    }
+
+                }
+
+
+
+            }
+        }
+    }
+
+    .footerBottom {
+        text-align: center;
+        background-color: var(--my-color-black);
+
+        p {
+            padding: 30px 0px;
+            color: var(--my-color-white);
+        }
+    }
+}

@@ -1,0 +1,48 @@
+@use "../../modules/mixins" as mxs;
+
+aside {
+    @include mxs.colFlex(start, center);
+    background-color: var(--my-color-greyLight);
+    height: 100vh;
+    position: sticky;
+    top: 0px;
+
+    h2 {
+        min-height: 80px;
+        line-height: 80px;
+        letter-spacing: calc(var(--my-size-min) * 2);
+        color: var(--my-color-white);
+        font-size: clamp(26px, 4vw, 32px);
+        font-weight: 500;
+        text-shadow: 0px 0px 6px var(--my-color-black);
+        cursor: default;
+    }
+
+    nav {
+
+        ul {
+            padding-block: calc(var(--my-size-mid) * 2);
+            border-block: 1px solid var(--my-color-greyDark);
+
+            &:last-of-type {
+                border-top: none;
+            }
+
+            li {
+                letter-spacing: 1px;
+                text-decoration: none;
+                font-weight: 500;
+                font-size: clamp(13px, 1vw, 15px);
+                color: var(--my-color-greyDark);
+                cursor: pointer;
+                padding-block: 7px;
+                list-style-type: none;
+
+                a {
+                    @extend li;
+                }
+            }
+        }
+    }
+
+}
