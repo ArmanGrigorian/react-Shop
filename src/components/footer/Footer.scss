@@ -10,6 +10,10 @@ footer {
         place-items: start space-between;
         padding: calc(var(--my-size-mid) * 8) calc(var(--my-size-mid) * 2);
 
+        @media only screen and (max-width: 920px) {
+            @include mxs.colFlex(center, stretch, 20px);
+        }
+
         h3 {
             color: var(--my-color-greyDark);
             font-weight: 400;

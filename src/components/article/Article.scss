@@ -1,8 +1,15 @@
+@use "../../modules/mixins" as mxs;
+
 article {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 2%;
+    padding-inline: 10px;
     padding-block: calc(var(--my-size-mid) * 2);
+
+    @media only screen and (max-width: 920px) {
+        @include mxs.colFlex(center, stretch);
+    }
 
     & > p {
         grid-row: 1/2;
@@ -15,11 +22,17 @@ article {
 
     figure {
         padding-block: var(--my-size-mid);
-        
+
+        @media only screen and (max-width: 920px) {
+            margin: 0 auto;
+            width: 70%;
+        }
+
         img {
             border-radius: 6px;
             width: 100%;
             aspect-ratio: 4/5;
+
         }
 
         figcaption {
