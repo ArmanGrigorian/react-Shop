@@ -5,12 +5,37 @@ header {
     min-height: 80px;
     background-color: var(--my-color-greyLight);
 
+    @media only screen and (max-width: 920px) {
+        background-color: var(--my-color-black);
+        color: var(--my-color-white);
+    }
+
+    & > aside {
+        width: 160px;
+        height: fit-content;
+        padding-bottom: 30px;
+        border-radius: 6px;
+        opacity: 0.9;
+        position: absolute;
+        top: 83px;
+        right: 4px;
+
+        @media only screen and (min-width: 920px) {
+            display: none;
+        }
+    }
+
     h3 {
         color: var(--my-color-greyDark);
         font-weight: 400;
         font-size: clamp(20px, 3vw, 24px);
         text-align: center;
         cursor: default;
+
+        @media only screen and (max-width: 920px) {
+            padding-left: 20px;
+            color: var(--my-color-white);
+        }
     }
 
     svg {
@@ -18,12 +43,24 @@ header {
         scale: 1.2;
         cursor: pointer;
 
+        &:first-of-type {
+            visibility: hidden;
+
+            @media only screen and (max-width: 920px) {
+                visibility: visible;
+            }
+        }
+
         &:hover {
             color: var(--my-color-greyDark);
         }
 
         &:active {
             transform: scale(0.9);
+        }
+
+        @media only screen and (max-width: 920px) {
+            scale: 0.9;
         }
     }
 }
