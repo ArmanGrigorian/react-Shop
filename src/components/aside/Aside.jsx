@@ -1,13 +1,13 @@
 import { Component } from "react";
 import "./Aside.scss";
-import { prodCategories, navCategories } from "../../_DATA.js";
+import { prodCategories, navCategories } from "../../_DATA/index.js";
 import PropTypes from "prop-types";
 
 export default class Aside extends Component {
 	constructor(props) {
 		super(props);
 
-		this.handleClick = props.handleClick
+		this.handleClick = props.handleClick;
 	}
 
 	render() {
@@ -40,5 +40,5 @@ export default class Aside extends Component {
 }
 
 Aside.propTypes = {
-	handleClick: PropTypes.func
-}
+	handleClick: PropTypes.func,
+};

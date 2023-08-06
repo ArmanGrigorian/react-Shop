@@ -5,7 +5,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { aboutCategories, paymentInfo, storeContacts } from "../../_DATA.js";
+import { aboutCategories, paymentInfo, storeContacts } from "../../_DATA/index.js";
 
 export default class Footer extends Component {
 	render() {

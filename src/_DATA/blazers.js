@@ -1,0 +1,3 @@
+const blazersList = [{}];
+
+export{blazersList}

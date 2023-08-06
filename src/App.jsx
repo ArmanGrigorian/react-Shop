@@ -5,7 +5,7 @@ import Article from "./components/article/Article.jsx";
 import SubscribeForm from "./components/subscribeForm/SubscribeForm.jsx";
 import Footer from "./components/footer/Footer.jsx";
 import Aside from "./components/aside/Aside.jsx";
-import { jeansList } from "./_DATA.js";
+import { dressesList, gymwearList, jacketList, jeansList, shirtsList, shoesList } from "./_DATA/index.js";
 
 export default class App extends Component {
 	constructor(props) {
@@ -13,13 +13,28 @@ export default class App extends Component {
 
 		this.state = {
 			products: null,
-			title: "Please click on ' Jeans '",
+			title: "Welcome",
 		};
 
 		this.handleClick = function (e) {
 			switch (e.target.textContent) {
+				case "Shirts":
+					this.setState({ products: shirtsList, title: "Shirts" });
+					break;
+				case "Dresses":
+					this.setState({ products: dressesList, title: "Dresses" });
+					break;
 				case "Jeans":
 					this.setState({ products: jeansList, title: "Jeans" });
+					break;
+				case "Jackets":
+					this.setState({ products: jacketList, title: "Jackets" });
+					break;
+				case "Gymwear":
+					this.setState({ products: gymwearList, title: "Gymwear" });
+					break;
+				case "Shoes":
+					this.setState({ products: shoesList, title: "Shoes" });
 					break;
 				default:
 					break;
